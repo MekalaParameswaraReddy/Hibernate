@@ -73,7 +73,7 @@ public class CriteriaTest {
 
 	/**
 	 * You can create AND or OR conditions using LogicalExpression restrictions
-	 * as follows
+	 * as follows....
 	 */
 	public void criteriaAndOrRestrictions() {
 		Criteria ct = session.createCriteria(Employee.class);
