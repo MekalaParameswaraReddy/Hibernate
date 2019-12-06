@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+<!-- dynamic-insert="true" : not presnet -->
+<!-- Hibernate: insert into person (firstname, lastname, gender, id, aadhaar, social_security_number) values (?, ?, ?, ?, ?, ?) -->
+<!-- dynamic-insert="true" : if present -->
+<!-- Hibernate: insert into person (id, aadhaar, social_security_number) values (?, ?, ?) -->
+
+<!-- dynamic-update="true" : not presnet -->
+<!-- Hibernate: update person set firstname=?, lastname=?, gender=? where id=? and aadhaar=? and social_security_number=? -->
+<!-- dynamic-update="true" : presnet -->
+<!-- Hibernate: update person set lastname=? where id=? and aadhaar=? and social_security_number=? -->
+
+	<class name="com.paramesh.pojo.Person" table="person" dynamic-update="true" dynamic-insert="true" >
+		<composite-id>
+			<key-property name="id" column="id" />
+			<key-property name="aadhaar" column="aadhaar" />
+			<key-property name="socialSecurityNumber" column="social_security_number" />
+		</composite-id>
+		<property name="firstName" column="firstname" />
+		<property name="lastName" column="lastname" />
+		<property name="gender" column="gender" />
+	</class>
+</hibernate-mapping>

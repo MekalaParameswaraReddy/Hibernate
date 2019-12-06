@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.paramesh.mapping.inheritance.Payments" table="Payments"
+		dynamic-update="true" discriminator-value="payment">
+		<id name="paymentId">
+			<!-- <generator class="assigned"></generator> -->
+			<generator class="increment"></generator>
+		</id>
+		<discriminator column="type" type="string"></discriminator>
+		<property name="customerName" />
+		<property name="paymentAmount" />
+
+		<subclass name="com.paramesh.mapping.inheritance.CashPayment"
+			discriminator-value="cash">
+			<property name="cashPaymentId"></property>
+			<property name="personName"></property>
+		</subclass>
+
+		<subclass name="com.paramesh.mapping.inheritance.ChequePayment"
+			discriminator-value="cheque">
+			<property name="chequePaymentId"></property>
+			<property name="chequeType"></property>
+			<property name="chequeHolderName"></property>
+		</subclass>
+
+
+	</class>
+</hibernate-mapping>

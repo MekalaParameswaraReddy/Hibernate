@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.paramesh.mapping.collection.Member" table="Member"
+		dynamic-update="true">
+		<id name="memberId">
+			<!-- <generator class="assigned"></generator> -->
+			<generator class="increment"></generator>
+		</id>
+		<property name="name" />
+		<!-- <list name="benifitPlan" table="benifitPlan"> <key column="qid"></key> 
+			<index column="index"></index> <element column="answer" type="string"></element> 
+			</list> -->
+		<!-- we can map the List by list or bag element in the mapping file. The 
+			bag is just like List but it doesn't require index element. -->
+		<bag name="benifitPlan" table="benifitPlan">
+			<key column="qid"></key>
+			<element column="answer" type="string"></element>
+		</bag>
+		<!-- we can map the Set by set element in the mapping file. The set element 
+			doesn't require index element. The one difference between List and Set is 
+			that, it stores only unique values. -->
+		<set name="uniqueBenifitPlan" table="uniqueBenifitPlan">
+			<key column="qid"></key>
+			<element column="answer" type="string"></element>
+		</set>
+		<!-- Hibernate allows you to map Map elements with the RDBMS. As we know, 
+			list and map are index-based collections. In case of map, index column works 
+			as the key and element column works as the value. -->
+		<map name="planNameAndExplanation" table="planNameAndExplanation"
+			cascade="all">
+			<key column="memberID"></key>
+			<index column="plan" type="string"></index>
+			<element column="Description" type="string"></element>
+		</map>
+	</class>
+
+</hibernate-mapping>

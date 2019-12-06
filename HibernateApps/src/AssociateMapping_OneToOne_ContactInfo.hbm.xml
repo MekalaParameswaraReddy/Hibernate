@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.paramesh.mapping.associate.ContactInformation" table="contact_info"
+		dynamic-update="true">
+		<id name="studentId" column="student_id">
+			<generator class="foreign">
+				<param name="property">student</param>
+			</generator>
+		</id>
+		<property name="personlaNumber" column="personal_number" />
+		<property name="homeNumber" column="home_number"/>
+		<one-to-one name="student"></one-to-one>
+	</class>
+</hibernate-mapping>
