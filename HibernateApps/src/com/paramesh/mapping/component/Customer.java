@@ -8,6 +8,7 @@ import java.util.Date;
  * @Since:
  */
 public class Customer {
+	
 	private int custId;
 	private String custName;
 	private int age;

@@ -16,7 +16,7 @@
 		<!-- <property name="hbm2ddl.auto">create</property> -->
 		<mapping resource="Employee.hbm.xml" />
 		<mapping resource="Person.hbm.xml" />
-		<!-- <mapping resource="ComponentMapping.hbm.xml"/> -->
+		<mapping resource="ComponentMapping.hbm.xml"/>
 		<!-- <mapping resource="Payments_TablePerClass.hbm.xml"/> -->
 		<!-- <mapping resource="Payments_TablePerConcreteClass.hbm.xml"/> -->
 		<!-- <mapping resource="Payments_TablePerSubClass.hbm.xml"/> -->
