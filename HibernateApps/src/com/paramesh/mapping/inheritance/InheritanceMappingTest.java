@@ -14,11 +14,16 @@ public class InheritanceMappingTest {
 	InitializeResource initializeResource = null;
 
 	/**
-	 * Default Constructor
+	 * Param Constructor :  passing the cfg file externally.
 	 */
 	public InheritanceMappingTest(String configFile) {
 		initializeResource = new InitializeResource();
 		session = initializeResource.getSession(configFile);
+	}
+	
+	public InheritanceMappingTest() {
+		initializeResource = new InitializeResource();
+		session = initializeResource.getSession();
 	}
 
 	/**
@@ -146,10 +151,12 @@ public class InheritanceMappingTest {
 	}
 	
 	public static void main(String[] args) {
+		InheritanceMappingTest test = new InheritanceMappingTest();
+		test.tablePerClasses();
+		
 		InheritanceMappingTest inheritanceMappingTest = new InheritanceMappingTest("Payments_TablePerConcreteClass.cfg.xml");
 		//inheritanceMappingTest.tablePerClasses();
-		inheritanceMappingTest.tablePerConcreteClass();
-		//inheritanceMappingTest.tablePerSubClass();
+		//inheritanceMappingTest.tablePerConcreteClass();
+		//inheritanceMappingTest.tablePerSubClass();		
 	}
-
 }
