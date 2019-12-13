@@ -13,12 +13,12 @@
 		<property name="customerName" />
 		<property name="paymentAmount" />
 
-		<union-subclass name="com.paramesh.mapping.inheritance.CashPayment"	table="CASH_PAYMENTS_1">
+		<union-subclass name="com.paramesh.mapping.inheritance.CashPayment"	table="CASH_PAYMENTS">
 			<property name="cashPaymentId"></property>
 			<property name="personName"></property>
 		</union-subclass>
 
-		<union-subclass name="com.paramesh.mapping.inheritance.ChequePayment" table="CHEQUE_PAYMENTS_1">
+		<union-subclass name="com.paramesh.mapping.inheritance.ChequePayment" table="CHEQUE_PAYMENTS">
 			<property name="chequePaymentId"></property>
 			<property name="chequeType"></property>
 			<property name="chequeHolderName"></property>
