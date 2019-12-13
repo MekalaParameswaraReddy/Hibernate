@@ -65,25 +65,27 @@ public class InheritanceMappingTest {
 	
 	/**
 	 * In case of Table Per Concrete class, there will be three tables in the database having no relations to each other. 
+	 * 
+	 * In between tables no relations.
 	 */
 	public void tablePerConcreteClass() {
 		System.out.println("Inheritance Mapping: Table per Concrete class --- @start");
 		Transaction tx = session.beginTransaction();
 
 		Payments payments = new Payments();
-		payments.setPaymentId(101);
+		payments.setPaymentId(105);
 		payments.setCustomerName("Paramesh");
 		payments.setPaymentAmount(10000);
 
 		CashPayment cashPayment = new CashPayment();
-		cashPayment.setPaymentId(101);
+		cashPayment.setPaymentId(106);
 		cashPayment.setCustomerName("Paramesh");
 		cashPayment.setPaymentAmount(10000);
 		cashPayment.setCashPaymentId("A1A2234");
 		cashPayment.setPersonName("Paramesh-Friend");
 
 		ChequePayment chequePayment = new ChequePayment();
-		chequePayment.setPaymentId(101);
+		chequePayment.setPaymentId(107);
 		chequePayment.setCustomerName("Paramesh");
 		chequePayment.setPaymentAmount(10000);
 		chequePayment.setChequePaymentId("A1A2A3");
@@ -95,9 +97,9 @@ public class InheritanceMappingTest {
 		 * session.persist(cashPayment);
 		 */
 
-		/*session.save(payments);
+		session.save(payments);
 		session.save(chequePayment);
-		session.save(cashPayment);*/
+		session.save(cashPayment);
 
 		tx.commit();
 		session.close();
@@ -151,12 +153,12 @@ public class InheritanceMappingTest {
 	}
 	
 	public static void main(String[] args) {
-		InheritanceMappingTest test = new InheritanceMappingTest();
-		test.tablePerClasses();
+		/*InheritanceMappingTest test = new InheritanceMappingTest();
+		test.tablePerClasses();*/
 		
-		InheritanceMappingTest inheritanceMappingTest = new InheritanceMappingTest("Payments_TablePerConcreteClass.cfg.xml");
+		InheritanceMappingTest inheritanceMappingTest = new InheritanceMappingTest("Payments_InhertanceMapping.cfg.xml");
 		//inheritanceMappingTest.tablePerClasses();
-		//inheritanceMappingTest.tablePerConcreteClass();
+		inheritanceMappingTest.tablePerConcreteClass();
 		//inheritanceMappingTest.tablePerSubClass();		
 	}
 }
