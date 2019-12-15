@@ -117,22 +117,22 @@ public class InheritanceMappingTest {
 		System.out.println("Inheritance Mapping: Table per Sub class --- @start");
 		Transaction tx = session.beginTransaction();
 
-		/*
-		 * Payments payments = new Payments(); payments.setPaymentId(101);
-		 * payments.setCustomerName("Paramesh");
-		 * payments.setPaymentAmount(10000);
-		 */
+		Payments payments = new Payments(); 
+		payments.setPaymentId(101);
+		payments.setCustomerName("Paramesh_1");
+		payments.setPaymentAmount(10000);
+		
 
 		CashPayment cashPayment = new CashPayment();
 		cashPayment.setPaymentId(101);
-		cashPayment.setCustomerName("Paramesh_3");
+		cashPayment.setCustomerName("Paramesh_1");
 		cashPayment.setPaymentAmount(30000);
 		cashPayment.setCashPaymentId("XYZ-A1A2234");
 		cashPayment.setPersonName("Paramesh-Friend1");
 
 		ChequePayment chequePayment = new ChequePayment();
 		chequePayment.setPaymentId(102);
-		chequePayment.setCustomerName("Paramesh_4");
+		chequePayment.setCustomerName("Paramesh_2");
 		chequePayment.setPaymentAmount(40400);
 		chequePayment.setChequePaymentId("ABC-wA1A2A3");
 		chequePayment.setChequeHolderName("Paramesh-X-Friend2");
@@ -142,8 +142,8 @@ public class InheritanceMappingTest {
 		 * session.persist(payments); session.persist(chequePayment);
 		 * session.persist(cashPayment);
 		 */
-
-		// session.save(payments);
+		// We can save [payments] obj or not i.e up to us.
+		session.save(payments);
 		session.save(chequePayment);
 		session.save(cashPayment);
 
@@ -158,7 +158,7 @@ public class InheritanceMappingTest {
 		
 		InheritanceMappingTest inheritanceMappingTest = new InheritanceMappingTest("Payments_InhertanceMapping.cfg.xml");
 		//inheritanceMappingTest.tablePerClasses();
-		inheritanceMappingTest.tablePerConcreteClass();
-		//inheritanceMappingTest.tablePerSubClass();		
+		//inheritanceMappingTest.tablePerConcreteClass();
+		inheritanceMappingTest.tablePerSubClass();		
 	}
 }
