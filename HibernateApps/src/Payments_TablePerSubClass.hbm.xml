@@ -4,7 +4,7 @@
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-	<class name="com.paramesh.mapping.inheritance.Payments" table="PAYMENTS"
+	<class name="com.paramesh.mapping.inheritance.Payments" table="PAYMENTS_1"
 		dynamic-update="true">
 		<id name="paymentId">
 			<!-- <generator class="assigned"></generator> -->
@@ -13,13 +13,13 @@
 		<property name="customerName" />
 		<property name="paymentAmount" />
 
-		<joined-subclass name="com.paramesh.mapping.inheritance.CashPayment"	table="CASH_PAYMENTS">
+		<joined-subclass name="com.paramesh.mapping.inheritance.CashPayment"	table="CASH_PAYMENTS_1">
 		<key column="paymentId"></key> 
 			<property name="cashPaymentId"></property>
 			<property name="personName"></property>
 		</joined-subclass>
 
-		<joined-subclass name="com.paramesh.mapping.inheritance.ChequePayment" table="CHEQUE_PAYMENTS">
+		<joined-subclass name="com.paramesh.mapping.inheritance.ChequePayment" table="CHEQUE_PAYMENTS_1">
 			<key column="paymentId"></key> 
 			<property name="chequePaymentId"></property>
 			<property name="chequeType"></property>
