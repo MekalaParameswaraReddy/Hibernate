@@ -15,6 +15,6 @@
 		<property name="show_sql">true</property>
 		<property name="hbm2ddl.auto">create</property> 
 		<!-- <mapping resource="Payments_TablePerConcreteClass.hbm.xml"/> --> 
-		<mapping resource="Payments_TablePerSubClass.hbm.xmll"/>	
+		<mapping resource="Payments_TablePerSubClass.hbm.xml"/>	
 	</session-factory>
 </hibernate-configuration>
