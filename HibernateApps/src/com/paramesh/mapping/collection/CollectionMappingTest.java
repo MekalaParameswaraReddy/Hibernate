@@ -108,10 +108,10 @@ public class CollectionMappingTest {
 	}
 	public static void main(String[] args) {		
 		CollectionMappingTest test = new CollectionMappingTest();
-		//test.mappingList_Insert();
+		test.mappingList_Insert();
 		//test.mappingBag_Insert();
 		//test.mappingSet_Insert();
-		test.mappingSet_Insert();
+		//test.mappingSet_Insert();
 	}
 
 }

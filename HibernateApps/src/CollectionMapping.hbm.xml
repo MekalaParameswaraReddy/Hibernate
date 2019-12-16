@@ -11,31 +11,29 @@
 			<generator class="increment"></generator>
 		</id>
 		<property name="name" />
-		<!-- <list name="benifitPlan" table="benifitPlan"> <key column="qid"></key> 
-			<index column="index"></index> <element column="answer" type="string"></element> 
-			</list> -->
+		<!-- in list mapping <key> element is used to define the foreign key. -->
+		<!-- <index> element is used to identify the type. List and Map are indexed collection. -->
+		<!-- <element> is used to define the element of the collection. -->
+		<list name="benifitPlan" table="benifitPlanList">
+			<key column="memid"></key>
+			<index column="listIndex"></index>
+			<element column="plans" type="string"></element>
+		</list>
 		<!-- we can map the List by list or bag element in the mapping file. The 
 			bag is just like List but it doesn't require index element. -->
-		<bag name="benifitPlan" table="benifitPlan">
-			<key column="qid"></key>
-			<element column="answer" type="string"></element>
-		</bag>
+		<!-- <bag name="benifitPlan" table="benifitPlan"> <key column="qid"></key> 
+			<element column="answer" type="string"></element> </bag> -->
 		<!-- we can map the Set by set element in the mapping file. The set element 
 			doesn't require index element. The one difference between List and Set is 
 			that, it stores only unique values. -->
-		<set name="uniqueBenifitPlan" table="uniqueBenifitPlan">
-			<key column="qid"></key>
-			<element column="answer" type="string"></element>
-		</set>
+		<!-- <set name="uniqueBenifitPlan" table="uniqueBenifitPlan"> <key column="qid"></key> 
+			<element column="answer" type="string"></element> </set> -->
 		<!-- Hibernate allows you to map Map elements with the RDBMS. As we know, 
 			list and map are index-based collections. In case of map, index column works 
 			as the key and element column works as the value. -->
-		<map name="planNameAndExplanation" table="planNameAndExplanation"
-			cascade="all">
-			<key column="memberID"></key>
-			<index column="plan" type="string"></index>
-			<element column="Description" type="string"></element>
-		</map>
+		<!-- <map name="planNameAndExplanation" table="planNameAndExplanation" 
+			cascade="all"> <key column="memberID"></key> <index column="plan" type="string"></index> 
+			<element column="Description" type="string"></element> </map> -->
 	</class>
 
 </hibernate-mapping>

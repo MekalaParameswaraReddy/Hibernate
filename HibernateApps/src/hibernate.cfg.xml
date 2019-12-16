@@ -20,6 +20,6 @@
 		<mapping resource="Payments_TablePerClass.hbm.xml"/>
 		<!-- <mapping resource="Payments_TablePerConcreteClass.hbm.xml"/> -->
 		<!-- <mapping resource="Payments_TablePerSubClass.hbm.xml"/> -->
-		<!-- <mapping resource="CollectionMapping.hbm.xml"/> -->
+		<mapping resource="CollectionMapping.hbm.xml"/>
 	</session-factory>
 </hibernate-configuration>
