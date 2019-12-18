@@ -61,7 +61,7 @@ public class CollectionMappingTest {
 		list.add("Benifit plan -D");
 		Member member = new Member();
 		member.setMemberId(101);
-		member.setName("Paramesh");
+		member.setName("Paramesh3");
 		member.setBenifitPlan(list);
 		session.save(member);
 		tx.commit();
@@ -81,7 +81,7 @@ public class CollectionMappingTest {
 		set.add("Benifit plan -D");
 		Member member = new Member();
 		member.setMemberId(101);
-		member.setName("Paramesh");
+		member.setName("Paramesh4");
 		member.setUniqueBenifitPlan(set);
 		session.save(member);
 		tx.commit();
@@ -98,9 +98,11 @@ public class CollectionMappingTest {
 		map.put("HMO","health maintenance organization");
 		map.put("MCO","managed care organization");
 		map.put("GDHP","High-deductible health plan");
+		map.put("MCO","managed care organization_2");
+		map.put("GDHP","High-deductible health plan_2");
 		Member member = new Member();
 		member.setMemberId(101);
-		member.setName("Paramesh");
+		member.setName("Parames17");
 		member.setPlanNameAndExplanation(map);
 		session.save(member);
 		tx.commit();
@@ -108,10 +110,10 @@ public class CollectionMappingTest {
 	}
 	public static void main(String[] args) {		
 		CollectionMappingTest test = new CollectionMappingTest();
-		test.mappingList_Insert();
+		//test.mappingList_Insert();
 		//test.mappingBag_Insert();
 		//test.mappingSet_Insert();
-		//test.mappingSet_Insert();
+		test.mappingMap_Insert();
 	}
 
 }
