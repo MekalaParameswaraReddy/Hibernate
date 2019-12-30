@@ -34,35 +34,36 @@ public class AssociateMappingTest {
 		
 		List<StockDetails> list1 = new ArrayList<StockDetails>();
 		StockDetails stockDetails1 = new StockDetails();
-		stockDetails1.setStockDetailsId(1);
-		stockDetails1.setOpenPrice(101);
+		stockDetails1.setStockDetailsId(7);
+		stockDetails1.setOpenPrice(111);
 		stockDetails1.setClosePrice(105);
 		stockDetails1.setValuems(120000);
 		stockDetails1.setMonth("Jan");
 		
-		List<StockDetails> list2 = new ArrayList<StockDetails>();
+		//List<StockDetails> list2 = new ArrayList<StockDetails>();
 		StockDetails stockDetails2 = new StockDetails();
-		stockDetails2.setStockDetailsId(2);
-		stockDetails2.setOpenPrice(102);
+		stockDetails2.setStockDetailsId(8);
+		stockDetails2.setOpenPrice(111);
 		stockDetails2.setClosePrice(110);
 		stockDetails2.setValuems(130000);
 		stockDetails2.setMonth("Feb");
 		
 		list1.add(stockDetails1);
-		list2.add(stockDetails2);
+		list1.add(stockDetails2);
+		//list2.add(stockDetails2);
 		
 		Stock stock1 = new Stock();
-		stock1.setStockId(11);;
-		stock1.setStockName("vedanta");
+		stock1.setStockId(13);;
+		stock1.setStockName("vedanta13");
 		stock1.setStockDetails(list1);
 		
-		Stock stock2 = new Stock();
+		/*Stock stock2 = new Stock();
 		stock2.setStockId(12);
 		stock2.setStockName("vedanta");
-		stock2.setStockDetails(list2);
+		stock2.setStockDetails(list2);*/
 		
 		session.save(stock1);
-		session.save(stock2);
+		//session.save(stock2);
 		tx.commit();
 		session.close();
 		System.out.println(" Associate Mapping : one to many :Insert: --- @ End...");
@@ -148,9 +149,9 @@ public class AssociateMappingTest {
 	
 	public static void main(String[] args) {
 		AssociateMappingTest test = new AssociateMappingTest("AssociateMapping.cfg.xml");
-		//test.oneToMany_Insert();
+		test.oneToMany_Insert();
 		//test.oneToMany_Fetch();
 		//test.manyToMany_Insert();
-		test.oneToOne_Insert();
+		//test.oneToOne_Insert();
 	}
 }

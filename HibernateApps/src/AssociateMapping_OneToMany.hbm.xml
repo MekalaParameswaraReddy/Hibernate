@@ -12,7 +12,7 @@
 		</id>
 		<property name="stockName" />
 		<list name="stockDetails" cascade="all">
-			<key column="qid"></key>
+			<key column="stockid_list"></key>
 			<index column="index_list"></index>
 			<one-to-many class="com.paramesh.mapping.associate.StockDetails" />
 		</list>

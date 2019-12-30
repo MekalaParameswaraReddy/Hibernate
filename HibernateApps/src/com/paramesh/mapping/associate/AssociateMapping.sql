@@ -1,11 +1,11 @@
 -- one - to - Many
-create table Stock(stockId int(10), stockName varchar(200), PRIMARY KEY (sotckId) );
+create table Stock(stockId int(10), stockName varchar(200), PRIMARY KEY (stockId) );
 
 create table stockDetails(
 stockDetailsId int(10),
-qid int(10), index_list int(10), openPrice int(10), closePrice int(10), valuems int(10), month varchar(200),
+stockid_list int(10), index_list int(10), openPrice int(10), closePrice int(10), valuems int(10), month varchar(200),
 -- PRIMARY KEY (stockDetailsId),
-FOREIGN KEY (qid) REFERENCES  Stock(stockId) );
+FOREIGN KEY (stockid_list) REFERENCES  Stock(stockId) );
 
 -- End --
 

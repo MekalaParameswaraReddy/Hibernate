@@ -102,7 +102,7 @@ public class CollectionMappingTest {
 		map.put("GDHP","High-deductible health plan_2");
 		Member member = new Member();
 		member.setMemberId(101);
-		member.setName("Parames17");
+		member.setName("Parames18");
 		member.setPlanNameAndExplanation(map);
 		session.save(member);
 		tx.commit();

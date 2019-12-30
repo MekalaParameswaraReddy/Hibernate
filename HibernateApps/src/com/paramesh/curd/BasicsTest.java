@@ -325,11 +325,11 @@ public class BasicsTest {
 		//basicsTest.saveORUpdateMethod(id, Firstname, LastName, gender);		
 		//basicsTest.deletMethod(id, Firstname, LastName, gender);		
 		//basicsTest.getMethodTest(id);
-		//basicsTest.loadMethodTest(id);
+		basicsTest.loadMethodTest(id);
 		//basicsTest.compositKeyTest();
 		//basicsTest.dynamicInsertTrueTest();
 		//basicsTest.dynamicUpdateTrueTest();	
-		basicsTest.dynamicUpdateTrueTest_Person();
+		//basicsTest.dynamicUpdateTrueTest_Person();
 
 	}
 }
