@@ -81,14 +81,14 @@ public class AssociateMappingTest {
 			List<StockDetails> stockDetailsList = stock.getStockDetails();
 			
 			for(StockDetails StockDetails : stockDetailsList){
-				System.out.print(
+				System.out.println(
 						StockDetails.getStockDetailsId() + " " +
 						StockDetails.getOpenPrice() + " " + 
 						StockDetails.getClosePrice() + " " + 
 						StockDetails.getValuems() + " " + 
 						StockDetails.getMonth());		
 			}
-			System.out.println();
+			System.out.println("*************************************");
 		}
 		
 		tx.commit();
@@ -149,9 +149,9 @@ public class AssociateMappingTest {
 	
 	public static void main(String[] args) {
 		AssociateMappingTest test = new AssociateMappingTest("AssociateMapping.cfg.xml");
-		test.oneToMany_Insert();
+		//test.oneToMany_Insert();
 		//test.oneToMany_Fetch();
-		//test.manyToMany_Insert();
+		test.manyToMany_Insert();
 		//test.oneToOne_Insert();
 	}
 }
