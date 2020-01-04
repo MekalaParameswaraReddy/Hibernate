@@ -101,26 +101,40 @@ public class AssociateMappingTest {
 	public void manyToMany_Insert(){
 		System.out.println(" Associate Mapping : many to many :Insert --- @ Start...");
 		Transaction tx = session.beginTransaction();
-		User user = new User();
-		user.setId(100);
-		user.setName("Paramesh");
+		User user1 = new User();
+		user1.setId(1);
+		user1.setName("Paramesh");
 		
+		User user2 = new User();
+		user2.setId(2);
+		user2.setName("Venkata");
+	
 		Role role1 = new Role();
-		role1.setId(1000);
+		role1.setId(101);
 		role1.setDescription("developer");
 		
 		Role role2 = new Role();
-		role2.setId(1001);
-		role2.setDescription("Testing");
+		role2.setId(102);
+		role2.setDescription("T.L");
 		
-		Set<Role> set = new HashSet<Role>();
-		set.add(role1);
-		set.add(role2);
+		Role role3 = new Role();
+		role3.setId(103);
+		role3.setDescription("Manager");
 		
-		user.setRoles(set);
+		Set<Role> set1 = new HashSet<Role>();
+		set1.add(role1);
+		set1.add(role2);
 		
-		session.save(user);
+		Set<Role> set2 = new HashSet<Role>();
+		set2.add(role1);
+		set2.add(role2);
+		set2.add(role3);
 		
+		user1.setRoles(set1);
+		user2.setRoles(set2);
+		session.save(user1);		
+		session.save(user2);
+					
 		tx.commit();
 		session.close();
 		System.out.println(" Associate Mapping : many to many :Insert: --- @ End...");
